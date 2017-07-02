@@ -8,7 +8,6 @@
 @endpush
 @push('styles')
     {!! Html::style('assets/plugins/sweetalert/sweetalert.css') !!}
-@endpush
 @section('content')
 @include('customers.layout.sections.slideshow')
 <div class="offer-banner-section">
@@ -56,12 +55,25 @@
                 type : "POST",
                 success : function(data){
                     console.log(data);
+<<<<<<< 2f30dee7b9201dfdfc29cc9894b322010e41bb4d
                     $('#cart-sidebar').html(data.cartContent);
                     $('#cart-total').html(data.total);
                     $('.top-subtotal .price').html('$' + data.subTotal)  
+=======
+                    if (data.total > 10) {
+                        sweetAlert("Oops...", "Something went wrong!", "error");
+                    }
+                    $('#cart-sidebar').html(data.cartContent);
+                    $('#cart-total').html(data.total);
+                    $('.price').html('$' + data.subTotal)  
+>>>>>>> active-Cart
                 }
             });
         });
     </script>
+<<<<<<< 2f30dee7b9201dfdfc29cc9894b322010e41bb4d
 @endpush
 
+=======
+@endpush
+>>>>>>> active-Cart
