@@ -55,3 +55,4 @@ Route::group(['namespace' => 'Auth', 'prefix' => 'auth', 'middleware' => 'guest'
 Route::get('/home', 'Customer\HomeController@index');
 Route::resource('carts', 'Customer\CartController', ['except' => ['destroy']]);
 Route::post('carts/destroy', 'Customer\CartController@destroy');
+Route::resource('billings', 'Customer\BillingController', ['only' => 'store']);

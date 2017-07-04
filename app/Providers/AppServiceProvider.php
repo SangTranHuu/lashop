@@ -6,7 +6,10 @@ use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Facades\View;
+use View;
+use App\Models\Province;
+use App\Models\District;
+use App\Models\Ward;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -34,6 +37,12 @@ class AppServiceProvider extends ServiceProvider
 
         $dataType = config('common.data_type');
         View::share('dataType', $dataType);
+        $provinces = Province::all();
+        $districts = District::all();
+        $wards = Ward::all();
+        View::share('provinces', $provinces);
+        View::share('districts', $districts);
+        View::share('wards', $wards);
     }
 
     /**

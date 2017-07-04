@@ -3,6 +3,11 @@
 <title>Check Out</title>
 @endsection
 @section('content')
+    @if(session('status'))
+        <div class="alert alert-success">
+            {{session('status')}}
+        </div>
+    @endif
 <section class="main-container col1-layout">
     <div class="main container">
         <div class="col-main">

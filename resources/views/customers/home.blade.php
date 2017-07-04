@@ -41,6 +41,9 @@
 </div>
 <!-- Featured Slider -->
 @include('customers.components.feature-slider')
+    <div>
+        {{$provinces}}
+    </div>
 
 <!-- End Featured Slider --> 
 @endsection
@@ -55,25 +58,11 @@
                 type : "POST",
                 success : function(data){
                     console.log(data);
-<<<<<<< 2f30dee7b9201dfdfc29cc9894b322010e41bb4d
                     $('#cart-sidebar').html(data.cartContent);
                     $('#cart-total').html(data.total);
-                    $('.top-subtotal .price').html('$' + data.subTotal)  
-=======
-                    if (data.total > 10) {
-                        sweetAlert("Oops...", "Something went wrong!", "error");
-                    }
-                    $('#cart-sidebar').html(data.cartContent);
-                    $('#cart-total').html(data.total);
-                    $('.price').html('$' + data.subTotal)  
->>>>>>> active-Cart
+                    $('top-subtotal .price').html('$' + data.subTotal)  
                 }
             });
         });
     </script>
-<<<<<<< 2f30dee7b9201dfdfc29cc9894b322010e41bb4d
 @endpush
-
-=======
-@endpush
->>>>>>> active-Cart
